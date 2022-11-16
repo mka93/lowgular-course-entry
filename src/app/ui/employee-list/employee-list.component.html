@@ -1,6 +1,8 @@
 <h1>Employee list</h1>
-<ul *ngIf="data$ | async as data; else empty">
+<div style="border: 1px solid black; width:500px">
+<ul  *ngIf="data$ | async as data; else empty">
   <li *ngFor="let employee of data">{{ employee.id }} : {{ employee.name }} : {{employee.email}}</li>
 </ul>
+</div>
 
 <ng-template #empty> There is no data </ng-template>

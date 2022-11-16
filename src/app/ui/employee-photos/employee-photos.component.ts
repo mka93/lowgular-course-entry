@@ -2,16 +2,14 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { EmployeeModel } from '../../model/employee.model';
-//import * as url from "url";
 
 @Component({
-  selector: 'employee-list',
-  templateUrl: './employee-list.component.html',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-employee-photos',
+  templateUrl: './employee-photos.component.html',
+  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmployeeListComponent {
-  //title: string = "Tekst, ktory pojawi sie w HTML";
+export class EmployeePhotosComponent {
   // @ts-ignore
   get "https://eqsfaxnghe.cfolks.pl/assets/data/employees.json"() {
     return this["https://eqsfaxnghe.cfolks.pl/assets/data/employees.json"];
