@@ -26,6 +26,6 @@ export class EmployeeFormComponent {
 
   onFormSubmitted(form: CreateEmployeeModel) {
     // @ts-ignore
-    this._employeeService.create(form).subscribe({complete: alert('User was successfully added to thedatabase. Name: ' + form.name + ', age: ' + form.age + ', salary: ' + form.salary)});
+    this._employeeService.create(form).subscribe({complete: alert('User was successfully added to the database. Name: ' + form.name + ', age: ' + form.age + ', salary: ' + form.salary)});
   }
 }

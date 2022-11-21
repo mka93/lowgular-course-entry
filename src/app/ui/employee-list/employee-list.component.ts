@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EmployeeService } from '../../services/employee.service';
-import {PersonModel} from "../../model/person.model";
+import { PersonModel } from '../../model/person.model';
 
 //import * as url from "url";
 
@@ -18,4 +17,10 @@ export class EmployeeListComponent {
   }
 
   data$: Observable<PersonModel[] | null> = this._employeeService.getAll();
+
+  remove(id: string) {
+
+    // @ts-ignore
+    this._employeeService.delete(id).subscribe({complete: alert('User was successfully removed')});
+  }
 }
