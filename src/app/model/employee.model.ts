@@ -1,6 +1,7 @@
 export interface EmployeeModel {
   id: string;
   name: string;
-  email: string;
+  salary: string;
+  age: string;
   image: string;
 }
