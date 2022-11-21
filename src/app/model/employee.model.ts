@@ -4,4 +4,5 @@ export interface EmployeeModel {
   salary: string;
   age: string;
   image: string;
+  mail: string
 }

@@ -1,0 +1,10 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
+  <table>
+    <tr><td><b>Name:</b></td><td><input type="text" formControlName="name" placeholder="Name"></td></tr>
+    <tr><td><b>Age:</b></td><td><input type="text" formControlName="age" placeholder="Age"></td></tr>
+    <tr><td><b>Salary:</b></td><td><input type="text" formControlName="salary" placeholder="Salary"></td></tr>
+    <tr><td><b>Mail:</b></td><td><input type="text" formControlName="mail" placeholder="Mail"></td></tr>
+  </table>
+  <br>
+  <input type="submit" [disabled]="employeeForm.invalid" value="Submit">
+</form>

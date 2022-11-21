@@ -1,14 +1,30 @@
-<table *ngIf="data$ | async as data" style="border: 1px solid black">
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+  }
+
+  tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
+</style>
+
+<table *ngIf="data$ | async as data" >
   <tr>
-    <td>ID</td>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Salary</td>
+    <td><b>ID</b></td>
+    <td><b>Name</b></td>
+    <td><b>Age</b></td>
+    <td><b>Salary</b></td>
+    <td><b>E-mail</b></td>
+    <td><b>Remove?</b></td>
   </tr>
   <tr *ngFor="let employee of data">
     <td>{{ employee.id }}</td>
     <td> {{ employee.name }}</td>
     <td>{{ employee.age }}</td>
     <td> {{ employee.salary }}</td>
+    <td> {{ employee.mail }}</td>
+    <td><button (click)="remove(employee.id)">Remove</button></td>
   </tr>
 </table>
