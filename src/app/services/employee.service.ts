@@ -35,4 +35,17 @@ export class EmployeeService {
   create(employee: EmployeeModel): Observable<void> {
     return this._httpClient.post('https://dummy.restapiexample.com/api/v1/create/', employee, undefined).pipe(map(_ => void 0));
   }
+
+  getOne(id: string): Observable<EmployeeModel> {
+    return this._httpClient.get<ApiResponse<EmployeeResponse>>('https://dummy.restapiexample.com/api/v1/employee/' + id).pipe(
+      map((response: ApiResponse<EmployeeResponse>): EmployeeModel => ({
+        id: response.data.id,
+        name: response.data.employee_name,
+        mail: '',
+        salary: response.data.employee_salary,
+        image: response.data.profile_image,
+        age: response.data.employee_age
+      }))
+    );
+  }
 }

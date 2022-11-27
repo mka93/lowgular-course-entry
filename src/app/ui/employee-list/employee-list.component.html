@@ -3,6 +3,8 @@
     border: 1px solid black;
     border-collapse: collapse;
     width: auto;
+    margin-left:auto;
+    margin-right:auto;
   }
 
   tr:nth-child(even) {
@@ -17,6 +19,7 @@
     <td><b>Age</b></td>
     <td><b>Salary</b></td>
     <td><b>E-mail</b></td>
+    <td><b>Details</b></td>
     <td><b>Remove?</b></td>
   </tr>
   <tr *ngFor="let employee of data">
@@ -25,6 +28,8 @@
     <td>{{ employee.age }}</td>
     <td> {{ employee.salary }}</td>
     <td> {{ employee.mail }}</td>
+    <td><b><a routerLink="/employee-details/{{employee.id}}">Details</a></b></td>
     <td><button (click)="remove(employee.id)">Remove</button></td>
   </tr>
 </table>
+
